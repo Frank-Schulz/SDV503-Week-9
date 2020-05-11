@@ -1,5 +1,7 @@
 'use strict';
 
+// Monday ================================================================
+
 let text = "Hello World!";
 console.log(text[2]);
 // let number = 8;
@@ -158,3 +160,112 @@ console.log(newText);
 
 const newTextToString = (newText.toString());
 console.log(newTextToString);
+
+
+
+// Tuesday ================================================================
+
+/*
+Callback is also known as high-order-function
+
+passing a function to another function "otherFunction"
+
+callback pattern
+
+let students = ['Dale', 'Frank', 'Kyran', 'Aaron'];
+
+students.forEach(function (eachStudent, index) {
+    console.log(index + 1 + "." + eachStudent) //
+
+    // When we pass a function as an argument to another function
+    // you are only passing a function definition ()
+
+    otherFunction has the callback function in its param as function definition
+    it can execute the callback ANYTIME
+=========================================================================================
+
+const dat = [];
+    function myData(dataFromUser) {
+        if(typeof dataFromUser === 'string') {
+            console.log(dataFromUser);
+        } else if (typeof dataFromUser === 'object') {
+            for(let item in dataFromUser) {
+                console.log(item + ':' + dataFromUser[item]);
+            }
+        }
+    }
+})
+
+const result = function input(dataInput, callback) {
+    dat.push(dataInput);
+    callback(dataInput);
+}
+
+input({}, myData)
+*/
+
+/*
+let pathToNextLocation
+fs.redFile('./file/location1.md', 'utf-8', function(err, val) {
+    if(err) throw new Error
+    pathToNextLocation = val;
+    fs.readFile(pathToNextLocation, 'utf-8', function(err, val) {
+        // do stuff!
+    })
+})
+
+1- Name your functions and declare them and pass the name only of then function
+as callback
+
+2- Seperate your code into modules. Ansd this is good coding in Express.js
+*/
+
+let myObject = {
+    firstName: 'Frank',
+    lastName: 'Schulz'
+};
+
+console.log(myObject);
+
+console.log(myObject.firstName);
+myObject.name = 'Muaz';
+
+console.log(myObject);
+
+/* -- Naming Conventions --
+1- Only use letters, digits, underscores
+2- Must start with a letter or underscore
+3- names are case sensitive
+4- Must not match a reserved keyword in JS
+*/
+
+let students = {
+    name: 'Luke',
+    class: 'SDV503',
+    school: 'NMIT'
+}
+
+console.log(Object.keys(students));
+
+// Object.freeze(students);
+// students.name = 'Phill';
+console.log(students);
+
+console.log(Object.isFrozen(students));
+
+let anotherStudent = {
+    studentName: 'Luke',
+    otherClass: 'CSA',
+    school: 'MIT'
+}
+
+const newObj = Object.assign(students, anotherStudent);
+console.log(newObj);
+
+// Object.create()
+// Object.is()
+// Object.isExtensible()
+
+// Object.is()
+const same = Object.is(students, anotherStudent)
+console.log(same);
